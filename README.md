@@ -18,10 +18,11 @@
   ==> **order by뒤에 올 수 있음, limit의 시작점은 0부터**
 
 * **DISTINCT 중복을 제거, select구문 바로 다음에 사용**
-
-  `select DISTINCT dept_id from s_emp;`
-  `select DISTINCT title from s_emp;`
-
+  ```
+  select DISTINCT dept_id from s_emp;
+  select DISTINCT title from s_emp;
+  ```
+  
 * **모든 사원의 연봉을 출력, NULL은 아무 값도 없는 것이 아니고 0을 의미하는 것도 아님**
 
   `select name, salary, salary * 12+commission_pct from s_emp;` -- x
