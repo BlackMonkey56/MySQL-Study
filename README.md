@@ -2,11 +2,11 @@
 
 SELECT \* FROM s_emp;
 
-> **Selection 행동을 특정한 조건을 주어서 제한함** > `SELECT * FROM s_emp` **WHERE dept_id=110**;
+> **Selection 행동을 특정한 조건을 주어서 제한함** > `SELECT \* FROM s_emp WHERE dept_id=110;`
 
-> **Projection 특정한 컬럼만 지정해서 나열함** > `SELECT`**name, title, salary** `FROM s_emp;`
+> **Projection 특정한 컬럼만 지정해서 나열함** > `SELECT name, title, salary FROM s_emp;`
 
-> **직책이 과장이고 salary가 2500이 넘는 사원의 이름, 월급, 직책** > `SELECT` **name, salary, title** `FROM s_emp` > **WHERE** `title='과장' AND salary > 2000;`
+> **직책이 과장이고 salary가 2500이 넘는 사원의 이름, 월급, 직책** > `SELECT name, salary, title FROM s_emp WHERE title='과장' AND salary > 2000;`
 
 > **사원중에 가장 급여를 낮게 받는 사원 5명의 이름과 직책, 월급을 출력** >`select name, title, salary from s_emp order by salary` **limit 0,5**; --> **order by뒤에 올 수 있음, limit의 시작점은 0부터**
 
