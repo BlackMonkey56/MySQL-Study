@@ -2,9 +2,10 @@
 
 SELECT \* FROM s_emp;
 
-> **Selection 행동을 특정한 조건을 주어서 제한함** > `SELECT \* FROM s_emp WHERE dept_id=110;`
+> **Selection 행동을 특정한 조건을 주어서 제한함** > `SELECT * FROM s_emp WHERE dept_id=110;`
 
-> **Projection 특정한 컬럼만 지정해서 나열함** > `SELECT name, title, salary FROM s_emp;`
+> **Projection 특정한 컬럼만 지정해서 나열함**
+> `SELECT name, title, salary FROM s_emp;`
 
 > **직책이 과장이고 salary가 2500이 넘는 사원의 이름, 월급, 직책** > `SELECT name, salary, title FROM s_emp WHERE title='과장' AND salary > 2000;`
 
