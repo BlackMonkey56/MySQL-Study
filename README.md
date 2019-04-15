@@ -122,18 +122,19 @@
 
 <hr/>
 
-- **1.title이 '부장'으로 끝나는 사원의 이름과 title을 출력**
+####1. title이 '부장'으로 끝나는 사원의 이름과 title을 출력
 
-  ```
-  SELECT name, title from s_emp WHERE RIGHT(title, 2) = '부장';
-  SELECT name, title from s_emp WHERE SUBSTR(title, 3, 2) = '부장';
-  ```
+```
+SELECT name, title from s_emp WHERE RIGHT(title, 2) = '부장';
+SELECT name, title from s_emp WHERE SUBSTR(title, 3, 2) = '부장';
+```
 
-* **2.이름이 '철'자로 끝나는 사원의 이름, 메일아이디, 입사일 출력 3가지 방법**
-  **1)SUBSTR 2)LIKE 3)INSTR**
+####2. 이름이 '철'자로 끝나는 사원의 이름, 메일아이디, 입사일 출력 3가지 방법
 
-  ```
-  select name, mailid, start_date from s_emp WHERE SUBSTR(name, -1, 1) = '철';
-  select name, mailid, start_date from s_emp WHERE name like '%철';
-  select name, mailid, start_date from s_emp WHERE INSTR(name, '철') = 3;
-  ```
+**1)SUBSTR 2)LIKE 3)INSTR**
+
+```
+select name, mailid, start_date from s_emp WHERE SUBSTR(name, -1, 1) = '철';
+select name, mailid, start_date from s_emp WHERE name like '%철';
+select name, mailid, start_date from s_emp WHERE INSTR(name, '철') = 3;
+```
