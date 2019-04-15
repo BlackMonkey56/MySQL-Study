@@ -122,14 +122,14 @@
 
 <hr/>
 
-#### 1. title이 '부장'으로 끝나는 사원의 이름과 title을 출력
+### 1. title이 '부장'으로 끝나는 사원의 이름과 title을 출력
 
 ```
 SELECT name, title from s_emp WHERE RIGHT(title, 2) = '부장';
 SELECT name, title from s_emp WHERE SUBSTR(title, 3, 2) = '부장';
 ```
 
-#### 2. 이름이 '철'자로 끝나는 사원의 이름, 메일아이디, 입사일 출력 3가지 방법
+### 2. 이름이 '철'자로 끝나는 사원의 이름, 메일아이디, 입사일 출력 3가지 방법
 
 **1)SUBSTR 2)LIKE 3)INSTR**
 
