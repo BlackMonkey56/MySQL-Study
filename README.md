@@ -12,33 +12,34 @@
 
   `SELECT name, salary, title FROM s_emp WHERE title='과장' AND salary > 2000;`
 
-**사원중에 가장 급여를 낮게 받는 사원 5명의 이름과 직책, 월급을 출력**
+* **사원중에 가장 급여를 낮게 받는 사원 5명의 이름과 직책, 월급을 출력**
 
-`select name, title, salary from s_emp order by salary limit 0,5;` ==> **order by뒤에 올 수 있음, limit의 시작점은 0부터**
+  `select name, title, salary from s_emp order by salary limit 0,5;`
+  ==> **order by뒤에 올 수 있음, limit의 시작점은 0부터**
 
-**DISTINCT 중복을 제거, select구문 바로 다음에 사용**
+* **DISTINCT 중복을 제거, select구문 바로 다음에 사용**
 
-`select DISTINCT dept_id from s_emp;` > `select DISTINCT title from s_emp;`
+  `select DISTINCT dept_id from s_emp;` > `select DISTINCT title from s_emp;`
 
-**모든 사원의 연봉을 출력, NULL은 아무 값도 없는 것이 아니고 0을 의미하는 것도 아님**
+* **모든 사원의 연봉을 출력, NULL은 아무 값도 없는 것이 아니고 0을 의미하는 것도 아님**
 
-`select name, salary, salary * 12+commission_pct from s_emp;` -- x
+  `select name, salary, salary * 12+commission_pct from s_emp;` -- x
 
-**ifnull(comission_pct, 0)을 사용한다**
+* **ifnull(comission_pct, 0)을 사용한다**
 
-`select name, salary, salary * 12+ifnull(commission_pct,0) from s_emp;`
+  `select name, salary, salary * 12+ifnull(commission_pct,0) from s_emp;`
 
-**Alias 별칭주기**
+* **Alias 별칭주기**
 
-`select name, salary, salary * 12+ifnull(commission_pct,0) as AnnualSalary from s_emp;`
+  ```
+  select name, salary, salary * 12+ifnull(commission_pct,0) as AnnualSalary from s_emp;
+  select name, salary, salary * 12+ifnull(commission_pct,0) AnnualSalary from s_emp;
+  select name, salary, salary\*12+ifnull(commission_pct,0) '일년 연봉' from s_emp;
+  ```
 
-`select name, salary, salary * 12+ifnull(commission_pct,0) AnnualSalary from s_emp;`
+* **Alias로 ''나 ""로 묶은 경우 정렬 안됨...**
 
-`select name, salary, salary\*12+ifnull(commission_pct,0) '일년 연봉' from s_emp;`
-
-**Alias로 ''나 ""로 묶은 경우 정렬 안됨...**
-
-`select name, salary, salary\*12+ifnull(commission_pct,0) 일년연봉 from s_emp order by 일년연봉 asc;`
+  `select name, salary, salary\*12+ifnull(commission_pct,0) 일년연봉 from s_emp order by 일년연봉 asc;`
 
 <hr/>
 
