@@ -78,7 +78,7 @@
 
   `SELECT name, title, ifnull(convert(manager_id,char), '없음') CEO FROM s_emp;`
 
-* **아스키 값으로 변환**
+* **맨 앞 글자의 아스키 값을 출력**
 
   `SELECT ASCII(name) FROM s_emp;`
 
@@ -96,43 +96,44 @@
 
 <hr/>
 
-**사원의 입사년도만 출력 ----LEFT**
+- **사원의 입사년도만 출력 ----LEFT**
 
-`SELECT LEFT(start_date, 4) FROM s_emp;`
+  `SELECT LEFT(start_date, 4) FROM s_emp;`
 
-**사원의 이름만 출력(성은 빼고) ----RIGHT**
+* **사원의 이름만 출력(성은 빼고) ----RIGHT**
 
-`SELECT RIGHT(name, 2) FROM s_emp;`
+  `SELECT RIGHT(name, 2) FROM s_emp;`
 
-**사원의 title의 값이 앞에서 2글자만 출력되도록 ----SUBSTRING**
+* **사원의 title의 값이 앞에서 2글자만 출력되도록 ----SUBSTRING**
 
-`SELECT SUBSTR(title, 1, 2) FROM s_emp;`
+  `SELECT SUBSTR(title, 1, 2) FROM s_emp;`
 
-**빈 공간 제거**
+* **빈 공간 제거**
 
-```
-SELECT LTRIM(' James Gosling is Good ') Good;
-SELECT RTRIM(' James Gosling is Good ') Good;
-SELECT TRIM(' James Gosling is Good ') Good;
-```
+  ```
+  SELECT LTRIM(' James Gosling is Good ') Good;
+  SELECT RTRIM(' James Gosling is Good ') Good;
+  SELECT TRIM(' James Gosling is Good ') Good;
+  ```
 
-**가운데 공백 없애기**
-`SELECT REPLACE(' James Gosling is Good ', ' ', '') Good;`
+* **가운데 공백 없애기**
+
+  `SELECT REPLACE(' James Gosling is Good ', ' ', '') Good;`
 
 <hr/>
 
-**1.title이 '부장'으로 끝나는 사원의 이름과 title을 출력**
+- **1.title이 '부장'으로 끝나는 사원의 이름과 title을 출력**
 
-```
-SELECT name, title from s_emp WHERE RIGHT(title, 2) = '부장';
-SELECT name, title from s_emp WHERE SUBSTR(title, 3, 2) = '부장';
-```
+  ```
+  SELECT name, title from s_emp WHERE RIGHT(title, 2) = '부장';
+  SELECT name, title from s_emp WHERE SUBSTR(title, 3, 2) = '부장';
+  ```
 
-**2.이름이 '철'자로 끝나는 사원의 이름, 메일아이디, 입사일 출력 3가지 방법**
-**1)SUBSTR 2)LIKE 3)INSTR**
+* **2.이름이 '철'자로 끝나는 사원의 이름, 메일아이디, 입사일 출력 3가지 방법**
+  **1)SUBSTR 2)LIKE 3)INSTR**
 
-```
-select name, mailid, start_date from s_emp WHERE SUBSTR(name, -1, 1) = '철';
-select name, mailid, start_date from s_emp WHERE name like '%철';
-select name, mailid, start_date from s_emp WHERE INSTR(name, '철') = 3;
-```
+  ```
+  select name, mailid, start_date from s_emp WHERE SUBSTR(name, -1, 1) = '철';
+  select name, mailid, start_date from s_emp WHERE name like '%철';
+  select name, mailid, start_date from s_emp WHERE INSTR(name, '철') = 3;
+  ```
