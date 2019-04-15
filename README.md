@@ -44,12 +44,15 @@
 <hr/>
 
 - **상사번호가 제일 높은 순으로**
+
   `select * from s_emp order by manager_id;`
 
 - **상사가 없는 사원의 이름 검색**
+
   `select name from s_emp where manager_id is null;`
 
 * **논리 연산자 사용**
+
   `SELECT name, title, salary FROM s_emp WHERE (title="영업대표이사" OR title="사장") AND salary > 3000;`
 
 * **IN연산자**
@@ -63,15 +66,20 @@
 * **LIKE 연산자(특정한 이름이 들어간 데이터를 검색 : 와일드카드)**
 
   - **사원의 이름이 '철'자로 끝나는 사원의 이름을 검색**
+
     `select name from s*emp where name like '%철';`
+
   - **사원의 이름 중에 심자가 가운데 이름으로 들어간 사원의 이름을 출력**
+
     `select name from s_emp where name like '*심%';`
 
 * **상사가 없는 사원의 manager_id의 컬럼값을 '없음'으로 치환하고 해당 alias를 CEO로 지정하세요.**
   **사원의 이름과 직책, 상사번호가 출력되도록 하세요.**
+
   `SELECT name, title, ifnull(convert(manager_id,char), '없음') CEO FROM s_emp;`
 
 * **아스키 값으로 변환**
+
   `SELECT ASCII(name) FROM s_emp;`
 
 * **단어 대체하기**
