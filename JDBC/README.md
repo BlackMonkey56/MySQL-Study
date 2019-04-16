@@ -15,7 +15,7 @@
 Connection conn = DriverManager.getConnection(`Driver경로`);
 PreparedStatement ps = conn.prepareStatement(`쿼리문`);
 
-        ps.executeUpdate(); => int를 반환, 변경한 행의 갯수
+        ps.executeUpdate(); => int를 반환, 변경한 행의 갯수 (DML에 대한 처리결과)
         ps.executeQuery(); => ResultSet을 반환, 쿼리 결과로서의 행들을 반환
 ```
 
